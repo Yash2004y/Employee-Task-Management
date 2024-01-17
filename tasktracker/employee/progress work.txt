@@ -1,0 +1,29 @@
+delete employee ma allocated task delete karva ke nahi te check karve (admin/action/deleteemployee.php)
+Remove Allocation Task Nu Add Karvu padse
+jyare allocatetask karvi tyare je allocate thaigaya hoy tene dekhadva dropdown list ma ke nahi
+
+
+//code for get task throw xml in admin/allocatetask.php
+xml = new XMLHttpRequest();
+xml.open("POST","action/gettask.php?id="+projectid,true);
+xml.send();
+xml.onreadystatechange = function()
+{
+    if(xml.readyState == 4 && xml.status == 200)
+    {
+        document.getElementById("taskid").innerHTML = xml.responseText;
+    }
+};
+
+//code for get employee throw xml in admin/allocatetask.php
+
+      xml = new XMLHttpRequest();
+      xml.open("POST","action/getemp.php?dname="+dept,true);
+      xml.send();
+      xml.onreadystatechange = function()
+      {
+        if(xml.readyState == 4 && xml.status == 200)
+        {
+          document.getElementById("empid").innerHTML = xml.responseText;
+        }
+      };
